@@ -22,6 +22,8 @@ export const PickupPayment = D.struct({
 
 const ConfirmRent = D.union(OnlinePayment, PickupPayment);
 
+type ConfirmRentType = D.TypeOf<typeof ConfirmRent>
+
 // Let's revise the implementation to use the new io-ts Decoder
 
 export function parseFormState(

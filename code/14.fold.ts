@@ -39,6 +39,13 @@ export function renderConfirmation(
 
 // Let's have a look at how Option is defined in fp-ts:
 import * as option from "fp-ts/Option";
+// type Option<A> = Some<A> | None
+// type Some<A> = { value: A, type: "some" }
+// type None = { type: "none" }
+
+// type Either<E, A> = Left<E> | Right<A>
+// type Left<E> = { error: E, type: "left" }
+// type Right<A> = { value: A, type: "right" }
 
 import { AgeRange } from "./10.domain";
 
