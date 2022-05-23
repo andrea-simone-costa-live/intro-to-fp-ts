@@ -47,6 +47,7 @@ function renderTotal(formState: FormState): string {
   return pipe(
     formState,
     parseFormState,
+    (x) => x,
     option.map(totalPrice),
     option.fold(
       () => "Please fill out the form completely",

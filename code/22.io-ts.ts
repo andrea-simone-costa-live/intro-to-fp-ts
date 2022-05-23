@@ -8,15 +8,18 @@ import * as D from "io-ts/Decoder";
 // Define an io-ts Decoder for `ConfirmRent`
 
 export const AgeRange = D.literal("18-25", "25-27", "27+");
-export const OnlinePayment = D.type({
+
+export const OnlinePayment = D.struct({
   paymentMode: D.literal("online"),
   ageRange: AgeRange,
   email: D.string,
 });
-export const PickupPayment = D.type({
+
+export const PickupPayment = D.struct({
   paymentMode: D.literal("pickup"),
   ageRange: AgeRange,
 });
+
 const ConfirmRent = D.union(OnlinePayment, PickupPayment);
 
 // Let's revise the implementation to use the new io-ts Decoder

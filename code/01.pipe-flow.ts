@@ -1,5 +1,7 @@
-import { double, length } from "./00.truth-or-lie";
 import { pipe, flow } from "fp-ts/function";
+
+export declare function length(a: string): number;
+export declare function double(a: string): string;
 
 export const result0 = length(double("foo"));
 

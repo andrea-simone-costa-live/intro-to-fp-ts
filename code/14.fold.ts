@@ -5,6 +5,7 @@ import {
 } from "./12.sum";
 import { identity, pipe } from "fp-ts/function";
 
+// per i sum type, gestisce i 2+ casi
 function fold<R>(match: {
   online: (onlinePayment: OnlinePayment) => R;
   pickup: (pickupPayment: PickupPayment) => R;
